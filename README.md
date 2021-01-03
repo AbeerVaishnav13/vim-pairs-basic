@@ -8,7 +8,7 @@ Plug 'AbeerVaishnav13/vim-pairs-basic'
 ```
 
 ## Characters for Pair support
-The following characters are supported for pair completion using vim-pairs-basic plugin.
+The following characters are supported for pair completion using vim-pairs-basic plugin:<br>
 `(`, `{`, `[`, `<`, `'`, `"`, and \`
 
 ## Usage
