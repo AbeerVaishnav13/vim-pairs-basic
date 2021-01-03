@@ -2,10 +2,8 @@
 This is a very basic implementation of auto-pairing of brackets and quotations for vim/neovim.
 
 ## Installation
-Using `VimPlug`
-```
-Plug 'AbeerVaishnav13/vim-pairs-basic'
-```
+1. Download a the files in `.zip` format and unzip the contents.
+2. Copy the `autopair.vim` file in your vim/neovim config directory.
 
 ## Characters for Pair support
 The following characters are supported for pair completion using vim-pairs-basic plugin:<br>
