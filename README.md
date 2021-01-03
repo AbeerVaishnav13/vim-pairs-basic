@@ -13,7 +13,9 @@ source /path/to/vim/config/directory/autopair.vim
 ### Through `VimPlug`
 - Copy and paste the following line in your vim plug config:
 ```
+call plug#begin('/path/to/your/vim/config/plugged')
 Plug 'AbeerVaishnav13/vim-pairs-basic'
+call plug#end()
 ```
 
 ## Characters for Pair support
