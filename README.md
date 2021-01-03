@@ -2,11 +2,18 @@
 This is a very basic implementation of auto-pairing of brackets and quotations for vim/neovim.
 
 ## Installation
+### Manually
 1. Download the files in `.zip` format and unzip the contents.
-2. Copy the `autopair.vim` file in your vim/neovim config directory.
+2. Copy the `plugin/autopair.vim` file in your vim/neovim config directory.
 3. Copy and paste this line in your `.vimrc` or `init.vim`:
 ```
 source /path/to/vim/config/directory/autopair.vim
+```
+
+### Through `VimPlug`
+- Copy and paste the following line in your vim plug config:
+```
+Plug 'AbeerVaishnav13/vim-pairs-basic'
 ```
 
 ## Characters for Pair support
