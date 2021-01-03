@@ -156,7 +156,7 @@ xno <silent> <expr> ds< { "\<c-v>": ":norm di<bPw2x\<CR>" }[mode()]
 nnoremap ds< di<bPw2x
 
 " Quotes
-xno <silent> <expr> ds" { "\<c-v>": ":norm di"bPw2x\<CR>" }[mode()]
+xno <silent> <expr> ds" { "\<c-v>": ":norm di\"bPw2x\<CR>" }[mode()]
 nnoremap ds" di"bPw2x
 
 xno <silent> <expr> ds' { "\<c-v>": ":norm di'bPw2x\<CR>" }[mode()]
