@@ -101,3 +101,14 @@ output text: <html>
 
 - Pressing the `{` key for surrounding selected text with `{.}`
 <img src='./images/hw_surrounded.png' width=200 alt="Surrounded text"/>
+
+### Delete Surrounding pairs
+##### Steps
+1. Place the cursor within the pair that you want to delete
+2. Use the `ds<pair-char>` command to delete the surrounding bracket/quote pairs.
+##### Example
+- After typing the `ds{` command, with the cursor inside`{.}`:
+```
+input text: {Hello World}, you're using vim-pairs-basic.
+output text: Hello World, you're using vim-pairs-basic.
+```
