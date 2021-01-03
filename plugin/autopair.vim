@@ -104,3 +104,15 @@ vnoremap < c<><Esc>P
 vnoremap " c""<Esc>P
 vnoremap ' c''<Esc>P
 vnoremap ` c``<Esc>P
+
+" Delete surrounding pairs
+" Brackets
+nnoremap ds( di(<Left>P<Right>2x
+nnoremap ds[ di[<Left>P<Right>2x
+nnoremap ds{ di{<Left>P<Right>2x
+nnoremap ds< di<<Left>P<Right>2x
+
+" Quotes
+nnoremap ds" di"<Left>P<Right>2x
+nnoremap ds' di'<Left>P<Right>2x
+nnoremap ds` di`<Left>P<Right>2x
