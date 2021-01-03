@@ -4,6 +4,10 @@ This is a very basic implementation of auto-pairing of brackets and quotations f
 ## Installation
 1. Download a the files in `.zip` format and unzip the contents.
 2. Copy the `autopair.vim` file in your vim/neovim config directory.
+3. Copy and paste this line in your `.vimrc` or `init.vim`:
+```
+source /path/to/vim/config/directory/autopair.vim
+```
 
 ## Characters for Pair support
 The following characters are supported for pair completion using vim-pairs-basic plugin:<br>
