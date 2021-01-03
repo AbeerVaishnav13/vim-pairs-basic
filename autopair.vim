@@ -46,28 +46,52 @@ inoremap ```<CR> ```<CR>```<Esc>O
 nnoremap rs({ F(r{f)r}
 nnoremap rs([ F(r[f)r]
 nnoremap rs(< F(r<f)r>
+nnoremap rs(' F(r'f)r'
+nnoremap rs(" F(r"f)r"
+nnoremap rs(` F(r`f)r`
 
 nnoremap rs[{ F[r{f]r}
 nnoremap rs[( F[r(f]r)
 nnoremap rs[< F[r<f]r>
+nnoremap rs[' F[r'f]r'
+nnoremap rs[" F[r"f]r"
+nnoremap rs[` F[r`f]r`
 
-nnoremap rs{[ F{r[f}r]
 nnoremap rs{( F{r(f}r)
+nnoremap rs{[ F{r[f}r]
 nnoremap rs{< F{r<f}r>
+nnoremap rs{' F{r'f}r'
+nnoremap rs{" F{r"f}r"
+nnoremap rs{` F{r`f}r`
 
-nnoremap rs<[ F<r[f>r]
 nnoremap rs<( F<r(f>r)
+nnoremap rs<[ F<r[f>r]
 nnoremap rs<{ F<r{f>r}
+nnoremap rs<' F<r'f>r'
+nnoremap rs<" F<r"f>r"
+nnoremap rs<` F<r`f>r`
 
 " Quotes
 nnoremap rs'" F'r"f'r"
 nnoremap rs'` F'r`f'r`
+nnoremap rs'( F'r(f'r)
+nnoremap rs'[ F'r[f'r]
+nnoremap rs'{ F'r{f'r}
+nnoremap rs'< F'r<f'r>
 
 nnoremap rs"' F"r'f"r'
 nnoremap rs"` F"r`f"r`
+nnoremap rs"( F"r(f"r)
+nnoremap rs"[ F"r[f"r]
+nnoremap rs"{ F"r{f"r}
+nnoremap rs"< F"r<f"r>
 
 nnoremap rs`" F`r"f`r"
 nnoremap rs`' F`r'f`r'
+nnoremap rs`( F`r(f`r)
+nnoremap rs`[ F`r[f`r]
+nnoremap rs`{ F`r{f`r}
+nnoremap rs`< F`r<f`r>
 
 " Surround visually selected expressions
 " Brackets
