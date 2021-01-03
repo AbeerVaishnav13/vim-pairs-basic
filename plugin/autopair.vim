@@ -16,9 +16,9 @@ inoremap [] []<Left>
 inoremap <> <><Left>
 
 " Quotes
-inoremap "" ""<Left>
-inoremap '' ''<Left>
-inoremap `` ``<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap ` ``<Left>
 inoremap "; "";<Left><Left>
 inoremap '; '';<Left><Left>
 inoremap `; ``;<Left><Left>
