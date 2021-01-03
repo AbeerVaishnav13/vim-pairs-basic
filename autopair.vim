@@ -71,12 +71,12 @@ nnoremap rs`' F`r'f`r'
 
 " Surround visually selected expressions
 " Brackets
-vnoremap ( I(<Esc>gv<Right>A)
-vnoremap [ I[<Esc>gv<Right>A]
-vnoremap { I{<Esc>gv<Right>A}
-vnoremap < I<<Esc>gv<Right>A>
+vnoremap ( c()<Esc>P
+vnoremap [ c[]<Esc>P
+vnoremap { c{}<Esc>P
+vnoremap < c<><Esc>P
 
 " Quotes
-vnoremap " I"<Esc>gv<Right>A"
-vnoremap ' I'<Esc>gv<Right>A'
-vnoremap ` I`<Esc>gv<Right>A`
+vnoremap " c""<Esc>P
+vnoremap ' c''<Esc>P
+vnoremap ` c``<Esc>P
