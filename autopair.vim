@@ -38,6 +38,9 @@ inoremap {,<CR> {<CR>},<Esc>O
 inoremap (,<CR> (<CR>),<Esc>O
 inoremap [,<CR> [<CR>],<Esc>O
 
+" Quotes
+inoremap ```<CR> ```<CR>```<Esc>O
+
 " Replace surrounding pairs
 " Brackets
 nnoremap rs({ F(r{f)r}
@@ -66,7 +69,7 @@ nnoremap rs"` F"r`f"r`
 nnoremap rs`" F`r"f`r"
 nnoremap rs`' F`r'f`r'
 
-" Surround expressions
+" Surround visually selected expressions
 " Brackets
 vnoremap ( I(<Esc>gv<Right>A)
 vnoremap [ I[<Esc>gv<Right>A]
