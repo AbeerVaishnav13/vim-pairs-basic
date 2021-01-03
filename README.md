@@ -85,10 +85,10 @@ output text: <html>
 2. Press one of the supported pair characters for surrounding the selected text with them.
 ##### Example
 - Input text
-![Input text](./images/hw.png)
+![Input text](./images/hw.png =200)
 
 - Visual selection
-![Visual selected text](./images/hw_visual.png)
+![Visual selected text](./images/hw_visual.png =200)
 
 - Pressing the `{` key for surrounding selected text with `{.}`
-![Surrounded text](./images/hw_surrounded.png)
+![Surrounded text](./images/hw_surrounded.png =200)
