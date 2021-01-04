@@ -51,7 +51,7 @@ output: "|",
 ```
 input: {<Enter>
 output: {
-	|
+    |
 }
 ```
 
@@ -59,17 +59,17 @@ output: {
 ```
 input: {;<Enter>
 output: {
-	|
+    |
 };
 
 input: [,<Enter>
 output: [
-	|
+    |
 ],
 
 input: `;<Enter>
 output: `
-	|
+    |
 `;
 ```
 
