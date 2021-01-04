@@ -55,7 +55,7 @@ output: {
 }
 ```
 
-- Multi line brackets with `;` or `,`
+- Multi line brackets and quotations with `;` or `,`
 ```
 input: {;<Enter>
 output: {
@@ -66,6 +66,11 @@ input: [,<Enter>
 output: [
 	|
 ],
+
+input: `;<Enter>
+output: `
+	|
+`;
 ```
 
 ### Replace Surrounding pairs
