@@ -71,6 +71,11 @@ input: `;<Enter>
 output: `
     |
 `;
+
+input: ```<Enter>
+output: ```
+    |
+\```
 ```
 
 ### Replace Surrounding pairs
