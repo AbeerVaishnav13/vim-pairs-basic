@@ -1,5 +1,6 @@
 # Vim Pairs Basic
 This is a very basic implementation of auto-pairing of brackets and quotations for vim/neovim.
+A small tutorial video can be seen [**here**](https://abeervaishnav13.github.io/vim-pairs-basic/).
 
 ## Installation
 ### Through `VimPlug`
