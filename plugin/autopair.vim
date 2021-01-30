@@ -86,7 +86,7 @@ function SurroundWithPairs(curr_mode)
 	if a:curr_mode == 'v'
 		exec "norm gv"
 		exec "norm c".s:surr_pair[0].s:surr_pair[1]
-		exec "norm P"
+		exec "norm p"
 	elseif a:curr_mode == 'V'
 		exec "'<,'>norm I".s:surr_pair[0]
 		exec "'<,'>norm A".s:surr_pair[1]
