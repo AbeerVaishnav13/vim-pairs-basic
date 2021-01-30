@@ -1,4 +1,5 @@
 " My Autopairing keymaps
+let g:pair_dict ={'{':'}', '}':'{', '(':')', ')':'(', '[':']', ']':'[', '<':'>', '>':'<', '"':'"', "'":"'", '`':'`'}
 
 " Single line
 " Brackets
@@ -48,119 +49,45 @@ inoremap ';<CR> '<CR>';<Esc>O
 inoremap `;<CR> `<CR>`;<Esc>O
 
 " Replace surrounding pairs
-" Brackets
-nnoremap rs({ F(r{f)r}
-nnoremap rs([ F(r[f)r]
-nnoremap rs(< F(r<f)r>
-nnoremap rs(' F(r'f)r'
-nnoremap rs(" F(r"f)r"
-nnoremap rs(` F(r`f)r`
-
-nnoremap rs[{ F[r{f]r}
-nnoremap rs[( F[r(f]r)
-nnoremap rs[< F[r<f]r>
-nnoremap rs[' F[r'f]r'
-nnoremap rs[" F[r"f]r"
-nnoremap rs[` F[r`f]r`
-
-nnoremap rs{( F{r(f}r)
-nnoremap rs{[ F{r[f}r]
-nnoremap rs{< F{r<f}r>
-nnoremap rs{' F{r'f}r'
-nnoremap rs{" F{r"f}r"
-nnoremap rs{` F{r`f}r`
-
-nnoremap rs<( F<r(f>r)
-nnoremap rs<[ F<r[f>r]
-nnoremap rs<{ F<r{f>r}
-nnoremap rs<' F<r'f>r'
-nnoremap rs<" F<r"f>r"
-nnoremap rs<` F<r`f>r`
-
-" Quotes
-nnoremap rs'" F'r"f'r"
-nnoremap rs'` F'r`f'r`
-nnoremap rs'( F'r(f'r)
-nnoremap rs'[ F'r[f'r]
-nnoremap rs'{ F'r{f'r}
-nnoremap rs'< F'r<f'r>
-
-nnoremap rs"' F"r'f"r'
-nnoremap rs"` F"r`f"r`
-nnoremap rs"( F"r(f"r)
-nnoremap rs"[ F"r[f"r]
-nnoremap rs"{ F"r{f"r}
-nnoremap rs"< F"r<f"r>
-
-nnoremap rs`" F`r"f`r"
-nnoremap rs`' F`r'f`r'
-nnoremap rs`( F`r(f`r)
-nnoremap rs`[ F`r[f`r]
-nnoremap rs`{ F`r{f`r}
-nnoremap rs`< F`r<f`r>
-
-" Surround visually selected expressions
-function VLinePairs(pair_char1, pair_char2)
-	exec "norm I".a:pair_char1
-	exec "norm A".a:pair_char2
+function ReplaceSurrounding()
+	let s:first_pair = nr2char(getchar())
+	let s:second_pair = nr2char(getchar())
+	exec "norm F".s:first_pair."r".s:second_pair."f".g:pair_dict[s:first_pair]."r".g:pair_dict[s:second_pair]
 endfunction
 
-" Brackets
-xno <silent> <expr> as( {"v":		"c()\<Esc>P",
-					\ "V":		":call VLinePairs('(', ')')\<CR>",
-					\ "\<c-v>": "I(\<Esc>gv\<Right>A)\<Esc>",
-					\ }[mode()]
+nnoremap <silent> rs :call ReplaceSurrounding()<CR>
 
-xno <silent> <expr> as{ {"v":		"c{}\<Esc>P",
-					\ "V":		":call VLinePairs('{', '}')\<CR>",
-					\ "\<c-v>": "I{\<Esc>gv\<Right>A}\<Esc>",
-					\ }[mode()]
+" Surround visually selected expressions
+function SurroundWithPairs(curr_mode)
+	let s:surr_char = nr2char(getchar())
 
-xno <silent> <expr> as[ {"v":		"c[]\<Esc>P",
-					\ "V":		":call VLinePairs('[', ']')\<CR>",
-					\ "\<c-v>": "I[\<Esc>gv\<Right>A]\<Esc>",
-					\ }[mode()]
+	if a:curr_mode == 'v'
+		exec "norm gvc".s:surr_char.g:pair_dict[s:surr_char]
+		exec "norm p"
+	elseif a:curr_mode == 'V'
+		exec "norm gvI".s:surr_char
+		exec "norm gvA".g:pair_dict[s:surr_char]
+	elseif a:curr_mode == 'c-v'
+		exec "norm gvI".s:surr_char
+		exec "norm gvkA".g:pair_dict[s:surr_char]
+	endif
+endfunction
 
-xno <silent> <expr> as< {"v":		"c<>\<Esc>P",
-					\ "V":		":call VLinePairs('<', '>')\<CR>",
-					\ "\<c-v>": "I<\<Esc>gv\<Right>A>\<Esc>",
-					\ }[mode()]
-" Quotes
-xno <silent> <expr> as" {"v":		"c\"\"\<Esc>P",
-					\ "V":		":call VLinePairs('\"', '\"')\<CR>",
-					\ "\<c-v>": "I\"\<Esc>gv\<Right>A\"\<Esc>",
-					\ }[mode()]
-
-xno <silent> <expr> as' {"v":		"c''\<Esc>P",
-					\ "V":		":call VLinePairs(\"'\", \"'\")\<CR>",
-					\ "\<c-v>": "I'\<Esc>gv\<Right>A'\<Esc>",
-					\ }[mode()]
-
-xno <silent> <expr> as` {"v":		"c``\<Esc>P",
-					\ "V":		":call VLinePairs('`', '`')\<CR>",
-					\ "\<c-v>": "I`\<Esc>gv\<Right>A`\<Esc>",
+xno <silent> <expr> as {"v":	":call SurroundWithPairs('v')\<CR>",
+					\ "V":		"\<Esc>:call SurroundWithPairs('V')\<CR>",
+					\ "\<c-v>": "\<Esc>:call SurroundWithPairs('c-v')\<CR>",
 					\ }[mode()]
 
 " Delete surrounding pairs
-" Brackets
-xno <silent> <expr> ds( { "\<c-v>": ":norm di(bPw2x\<CR>" }[mode()]
-nnoremap ds( di(bPw2x
+function DeleteSurrounding(curr_mode)
+	let s:del_char = nr2char(getchar())
 
-xno <silent> <expr> ds[ { "\<c-v>": ":norm di[bPw2x\<CR>" }[mode()]
-nnoremap ds[ di[bPw2x
+	if a:curr_mode == 'n'
+		exec "norm di".s:del_char."bPw2x"
+	elseif a:curr_mode == 'c-v'
+		exec "'<,'>norm di".s:del_char."bPw2x"
+	endif
+endfunction
 
-xno <silent> <expr> ds{ { "\<c-v>": ":norm di{bPw2x\<CR>" }[mode()]
-nnoremap ds{ di{bPw2x
-
-xno <silent> <expr> ds< { "\<c-v>": ":norm di<bPw2x\<CR>" }[mode()]
-nnoremap ds< di<bPw2x
-
-" Quotes
-xno <silent> <expr> ds" { "\<c-v>": ":norm di\"bPw2x\<CR>" }[mode()]
-nnoremap ds" di"bPw2x
-
-xno <silent> <expr> ds' { "\<c-v>": ":norm di'bPw2x\<CR>" }[mode()]
-nnoremap ds' di'bPw2x
-
-xno <silent> <expr> ds` { "\<c-v>": ":norm di`bPw2x\<CR>" }[mode()]
-nnoremap ds` di`bPw2x
+xno <silent> <expr> ds {"\<c-v>": "\<Esc>:call DeleteSurrounding('c-v')\<CR>"}[mode()]
+nnoremap <silent> ds :call DeleteSurrounding('n')<CR>
