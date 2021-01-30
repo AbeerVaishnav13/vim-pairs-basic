@@ -75,7 +75,7 @@ endfunction
 
 nnoremap rs :call ReplaceSurrounding()<CR>
 
-" Surround visually selected expressions
+" Surround visually selected expressions with pairs
 function SurroundWithPairs(curr_mode)
 	let s:input = nr2char(getchar())
 	if s:input == "\<c-c>"
