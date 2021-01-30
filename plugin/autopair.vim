@@ -106,37 +106,37 @@ function VLinePairs(pair_char1, pair_char2)
 endfunction
 
 " Brackets
-xno <silent> <expr> <leader>( {"v":		"c()\<Esc>P",
+xno <silent> <expr> s( {"v":		"c()\<Esc>P",
 					\ "V":		":call VLinePairs('(', ')')\<CR>",
 					\ "\<c-v>": "I(\<Esc>gv\<Right>A)\<Esc>",
 					\ }[mode()]
 
-xno <silent> <expr> <leader>{ {"v":		"c{}\<Esc>P",
+xno <silent> <expr> s{ {"v":		"c{}\<Esc>P",
 					\ "V":		":call VLinePairs('{', '}')\<CR>",
 					\ "\<c-v>": "I{\<Esc>gv\<Right>A}\<Esc>",
 					\ }[mode()]
 
-xno <silent> <expr> <leader>[ {"v":		"c[]\<Esc>P",
+xno <silent> <expr> s[ {"v":		"c[]\<Esc>P",
 					\ "V":		":call VLinePairs('[', ']')\<CR>",
 					\ "\<c-v>": "I[\<Esc>gv\<Right>A]\<Esc>",
 					\ }[mode()]
 
-xno <silent> <expr> <leader>< {"v":		"c<>\<Esc>P",
+xno <silent> <expr> s< {"v":		"c<>\<Esc>P",
 					\ "V":		":call VLinePairs('<', '>')\<CR>",
 					\ "\<c-v>": "I<\<Esc>gv\<Right>A>\<Esc>",
 					\ }[mode()]
 " Quotes
-xno <silent> <expr> <leader>" {"v":		"c\"\"\<Esc>P",
+xno <silent> <expr> s" {"v":		"c\"\"\<Esc>P",
 					\ "V":		":call VLinePairs('\"', '\"')\<CR>",
 					\ "\<c-v>": "I\"\<Esc>gv\<Right>A\"\<Esc>",
 					\ }[mode()]
 
-xno <silent> <expr> <leader>' {"v":		"c''\<Esc>P",
+xno <silent> <expr> s' {"v":		"c''\<Esc>P",
 					\ "V":		":call VLinePairs(\"'\", \"'\")\<CR>",
 					\ "\<c-v>": "I'\<Esc>gv\<Right>A'\<Esc>",
 					\ }[mode()]
 
-xno <silent> <expr> <leader>` {"v":		"c``\<Esc>P",
+xno <silent> <expr> s` {"v":		"c``\<Esc>P",
 					\ "V":		":call VLinePairs('`', '`')\<CR>",
 					\ "\<c-v>": "I`\<Esc>gv\<Right>A`\<Esc>",
 					\ }[mode()]
