@@ -110,7 +110,7 @@ output text: <html>
 - Visual selection
 <img src='./images/hw_visual.png' width=200 alt="Visual selected text"/>
 
-- Pressing the `s{` key-combination for surrounding selected text with `{.}`
+- Pressing the `as{` key-combination for surrounding selected text with `{.}`
 <img src='./images/hw_surrounded.png' width=200 alt="Surrounded text"/>
 
 ### Delete Surrounding pairs
