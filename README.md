@@ -102,7 +102,7 @@ output text: <html>
 ### Surround text with pairs
 ##### Steps
 1. Visually select the text you want to surround with any of the supported pairs.
-2. Press one of the supported pair characters for surrounding the selected text with them.
+2. Press `as<pair-char>` for surrounding the selected text with them.
 ##### Example
 - Input text
 <img src='./images/hw.png' width=200 alt="Input text"/>
