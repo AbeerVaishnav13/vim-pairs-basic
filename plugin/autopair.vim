@@ -70,10 +70,10 @@ function ReplaceSurrounding()
 		return
 	endif
 	let s:second_pair = g:pair_dict[s:input2]
-	exec "norm F".s:first_pair[0]."r".s:second_pair[0]."f".s:first_pair[1]."r".s:second_pair[1]
+	exec "norm di".s:first_pair[0]."r".s:second_pair[1]."br".s:second_pair[0]."p"
 endfunction
 
-nnoremap rs :call ReplaceSurrounding()<CR>
+nnoremap <silent> rs :call ReplaceSurrounding()<CR>
 
 " Surround visually selected expressions with pairs
 function SurroundWithPairs(curr_mode)
@@ -96,14 +96,18 @@ function SurroundWithPairs(curr_mode)
 	endif
 endfunction
 
-xno <expr> as {"v":	":call SurroundWithPairs('v')\<CR>",
+xno <silent> <expr> as {"v":	":call SurroundWithPairs('v')\<CR>",
 					\ "V":		"\<Esc>:call SurroundWithPairs('V')\<CR>",
 					\ "\<c-v>": "\<Esc>:call SurroundWithPairs('c-v')\<CR>",
 					\ }[mode()]
 
 " Delete surrounding pairs
 function DeleteSurrounding(curr_mode)
-	let s:del_pair = g:pair_dict[nr2char(getchar())][0]
+	let s:del_char = nr2char(getchar())
+	if s:del_char == "\<c-c>"
+		return
+	endif
+	let s:del_pair = g:pair_dict[s:del_char][0]
 
 	if a:curr_mode == 'n'
 		exec "norm di".s:del_pair."bPw2x"
@@ -112,5 +116,5 @@ function DeleteSurrounding(curr_mode)
 	endif
 endfunction
 
-xno <expr> ds {"\<c-v>": "\<Esc>:call DeleteSurrounding('c-v')\<CR>"}[mode()]
-nnoremap ds :call DeleteSurrounding('n')<CR>
+xno <silent> <expr> ds {"\<c-v>": "\<Esc>:call DeleteSurrounding('c-v')\<CR>"}[mode()]
+nnoremap <silent> ds :call DeleteSurrounding('n')<CR>
