@@ -26,6 +26,9 @@ inoremap () ()<Left>
 inoremap [] []<Left>
 inoremap <> <><Left>
 
+" For latex and markdown
+inoremap $$ $$<Left>
+
 " Quotes
 inoremap "" ""<Left>
 inoremap '' ''<Left>
@@ -48,6 +51,9 @@ inoremap [;<CR> [<CR>];<Esc>O
 inoremap {,<CR> {<CR>},<Esc>O
 inoremap (,<CR> (<CR>),<Esc>O
 inoremap [,<CR> [<CR>],<Esc>O
+
+" For latex and markdown
+inoremap $$<CR> $$<CR>$$<Esc>O
 
 " Quotes
 inoremap "<CR> "<CR>"<Esc>O
